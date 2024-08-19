@@ -2147,6 +2147,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mj-studio/js-util@npm:1.1.3":
+  version: 1.1.3
+  resolution: "@mj-studio/js-util@npm:1.1.3"
+  checksum: 6f444aa83ebe2c4254ab2e87066ceb0bd40b412fb5b618126dfeb30032c2df1358cfee5229f42f9f3fc6822889d2cd46c5ebd3713723b236639650ae5516d4a4
+  languageName: node
+  linkType: hard
+
 "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1":
   version: 5.1.1-v1
   resolution: "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1"
@@ -2419,6 +2426,33 @@ __metadata:
   bin:
     rnc-cli: build/bin.js
   checksum: f8504b587291caa773eb85bfe260a2a2aec85b0db4ae55c41f473bacbab368641ea06c6c96b756c13a28d37450f1e715991e23eec7b169db76d84a075856e13d
+  languageName: node
+  linkType: hard
+
+"@react-native-kakao/core@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "@react-native-kakao/core@npm:2.2.5"
+  dependencies:
+    crypto-js: ^4.2.0
+    query-string: ^9.0.0
+    return-fetch: ^0.4.5
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: ab7dea7246d1c84e128b814adeed6611491d5d1c331d77b8ccd32c33dc48f8dd057ce750a5caa8f3a78a7d76098cd832f9476c1725092be3aaeaadc3265975cd
+  languageName: node
+  linkType: hard
+
+"@react-native-kakao/user@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "@react-native-kakao/user@npm:2.2.5"
+  dependencies:
+    "@mj-studio/js-util": 1.1.3
+  peerDependencies:
+    "@react-native-kakao/core": 2.2.5
+    react: "*"
+    react-native: "*"
+  checksum: f0f4bbcd78de19ab18e07aaa15f2a9e932d8aa4289115f70bb71fff5d034179dbee8ddb9ebd9685b25f7745a4de95b608716b864825c382efc44bdaf8eade639
   languageName: node
   linkType: hard
 
@@ -4277,6 +4311,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"crypto-js@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "crypto-js@npm:4.2.0"
+  checksum: f051666dbc077c8324777f44fbd3aaea2986f198fe85092535130d17026c7c2ccf2d23ee5b29b36f7a4a07312db2fae23c9094b644cc35f7858b1b4fcaf27774
+  languageName: node
+  linkType: hard
+
 "css-color-keywords@npm:^1.0.0":
   version: 1.0.0
   resolution: "css-color-keywords@npm:1.0.0"
@@ -4426,6 +4467,13 @@ __metadata:
   version: 1.2.0
   resolution: "decamelize@npm:1.2.0"
   checksum: ad8c51a7e7e0720c70ec2eeb1163b66da03e7616d7b98c9ef43cce2416395e84c1e9548dd94f5f6ffecfee9f8b94251fc57121a8b021f2ff2469b2bae247b8aa
+  languageName: node
+  linkType: hard
+
+"decode-uri-component@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "decode-uri-component@npm:0.4.1"
+  checksum: 0473924860986fb6ca19ee65a2af13e08801b4f3660475b058500ea8479ed715c919884a026b6bf4296dbb640d3cea74fadf45490b2439152fc548271d0201ec
   languageName: node
   linkType: hard
 
@@ -4593,6 +4641,13 @@ __metadata:
     no-case: ^3.0.4
     tslib: ^2.0.3
   checksum: a65e3519414856df0228b9f645332f974f2bf5433370f544a681122eab59e66038fc3349b4be1cdc47152779dac71a5864f1ccda2f745e767c46e9c6543b1169
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.4.5":
+  version: 16.4.5
+  resolution: "dotenv@npm:16.4.5"
+  checksum: 301a12c3d44fd49888b74eb9ccf9f07a1f5df43f489e7fcb89647a2edcd84c42d6bc349dc8df099cd18f07c35c7b04685c1a4f3e6a6a9e6b30f8d48c15b7f49c
   languageName: node
   linkType: hard
 
@@ -5266,6 +5321,13 @@ __metadata:
   dependencies:
     to-regex-range: ^5.0.1
   checksum: b4abfbca3839a3d55e4ae5ec62e131e2e356bf4859ce8480c64c4876100f4df292a63e5bb1618e1d7460282ca2b305653064f01654474aa35c68000980f17798
+  languageName: node
+  linkType: hard
+
+"filter-obj@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "filter-obj@npm:5.1.0"
+  checksum: ba7c24d9b2c0552ee87d268e07eca74483af61fb740545ffa809f7e9e5294de38cf163ecc55af0e8a40020af9a49512c32f4022de2a858b110420fc8bffa7c9c
   languageName: node
   linkType: hard
 
@@ -8194,6 +8256,8 @@ __metadata:
     "@babel/runtime": ^7.20.0
     "@emotion/native": ^11.11.0
     "@emotion/react": ^11.13.0
+    "@react-native-kakao/core": ^2.2.5
+    "@react-native-kakao/user": ^2.2.5
     "@react-native/babel-preset": 0.75.1
     "@react-native/eslint-config": 0.75.1
     "@react-native/metro-config": 0.75.1
@@ -8206,6 +8270,7 @@ __metadata:
     prettier: 2.8.8
     react: 18.3.1
     react-native: 0.75.1
+    react-native-dotenv: ^3.4.11
     react-native-safe-area-context: ^4.10.9
     react-native-svg: ^15.5.0
     react-native-svg-transformer: ^1.5.0
@@ -8381,6 +8446,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"query-string@npm:^9.0.0":
+  version: 9.1.0
+  resolution: "query-string@npm:9.1.0"
+  dependencies:
+    decode-uri-component: ^0.4.1
+    filter-obj: ^5.1.0
+    split-on-first: ^3.0.0
+  checksum: b5c808d702d3e5c8b5abbbad8d5f8d8bbb2c88ef1939d0a5426271636b12813211f56e13f0ddb45a135c95cb192a01c5887ecbc7526ce793e1e3ee9100a468fd
+  languageName: node
+  linkType: hard
+
 "querystring@npm:^0.2.1":
   version: 0.2.1
   resolution: "querystring@npm:0.2.1"
@@ -8439,6 +8515,17 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
+  languageName: node
+  linkType: hard
+
+"react-native-dotenv@npm:^3.4.11":
+  version: 3.4.11
+  resolution: "react-native-dotenv@npm:3.4.11"
+  dependencies:
+    dotenv: ^16.4.5
+  peerDependencies:
+    "@babel/runtime": ^7.20.6
+  checksum: 3ebac2c2ed79dd7e4920fd3fc2da9187413b7190231618e4858b46c47833677838b96d531afe7bd5c4b0a60454dba40cb8708722210df5d522e30aefbf41da05
   languageName: node
   linkType: hard
 
@@ -8832,6 +8919,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"return-fetch@npm:^0.4.5":
+  version: 0.4.6
+  resolution: "return-fetch@npm:0.4.6"
+  checksum: c3ad0dabd5c807501056396786f753bb307b6a69b23fdec7845fd5f249ccdf10cbc1aed92da5a86d9a430513abb7be144e9a7514eed2fc248b2a9aa29725a0a1
+  languageName: node
+  linkType: hard
+
 "reusify@npm:^1.0.4":
   version: 1.0.4
   resolution: "reusify@npm:1.0.4"
@@ -9208,6 +9302,13 @@ __metadata:
   version: 0.6.1
   resolution: "source-map@npm:0.6.1"
   checksum: 59ce8640cf3f3124f64ac289012c2b8bd377c238e316fb323ea22fbfe83da07d81e000071d7242cad7a23cd91c7de98e4df8830ec3f133cb6133a5f6e9f67bc2
+  languageName: node
+  linkType: hard
+
+"split-on-first@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "split-on-first@npm:3.0.0"
+  checksum: 75dc27ecbac65cfbeab9a3b90cf046307220192d3d7a30e46aa0f19571cc9b4802aac813f3de2cc9b16f2e46aae72f275659b5d2614bb5369c77724d739e5f73
   languageName: node
   linkType: hard
 
