@@ -34,7 +34,11 @@ export default function Login() {
       <Image source={require('./../../../assets/images/logo.png')} />
       <TouchableOpacity
         onPress={() => {
-          login();
+          try {
+            login();
+          } catch (e) {
+            console.log(e);
+          }
         }}
         style={css`
           background-color: ${colors.background.yellow};
