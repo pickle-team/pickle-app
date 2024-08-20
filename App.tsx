@@ -9,7 +9,7 @@ import {KAKAO_NATIVE_APP_KEY} from '@env';
 
 function App(): React.JSX.Element {
   initializeKakaoSDK(KAKAO_NATIVE_APP_KEY);
-
+  // getKeyHashAndroid().then(console.log);
   return (
     <SafeAreaProvider>
       <SafeAreaView

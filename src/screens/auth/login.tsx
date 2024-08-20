@@ -22,7 +22,7 @@ export default function Login() {
         onPress={async () => {
           const userInfo: KakaoUser = await me();
           setKakaoUserInfo(userInfo);
-          console.log(kakaoUserInfo);
+          console.log(kakaoUserInfo); // kakaoUserInfo.id -> 구별
         }}>
         <Text
           style={css`
