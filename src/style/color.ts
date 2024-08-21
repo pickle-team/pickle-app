@@ -7,7 +7,7 @@ const colors = {
     yellow: '#FEE500',
   },
   font: {
-    white: '#000000',
+    white: '#ffffff',
     grey: '#BCBCBC',
     black: '#000000',
   },

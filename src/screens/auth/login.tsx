@@ -1,5 +1,5 @@
-import {css} from '@emotion/native';
 import React, {useState} from 'react';
+import {css} from '@emotion/native';
 import {Image, Platform, Text, TouchableOpacity, View} from 'react-native';
 import KakaoLogo from './../../../assets/svg/kakao.svg';
 import colors from '../../style/color';
@@ -15,27 +15,23 @@ export default function Login() {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top: ${Platform.OS === 'ios' ? '-20px' : ''};
+        margin-top: -20px;
         padding: 0 20px;
       `}>
+      {/* <Text
+        style={css`
+          color: white;
+        `}>
+        {kakaoUserInfo ? kakaoUserInfo.toString() : 'null'}
+      </Text> */}
+      <Image source={require('./../../../assets/images/pickle.png')} />
       <TouchableOpacity
         onPress={async () => {
-          const userInfo: KakaoUser = await me();
-          setKakaoUserInfo(userInfo);
-          console.log(kakaoUserInfo); // kakaoUserInfo.id -> 구별
-        }}>
-        <Text
-          style={css`
-            color: white;
-          `}>
-          Test
-        </Text>
-      </TouchableOpacity>
-      <Image source={require('./../../../assets/images/logo.png')} />
-      <TouchableOpacity
-        onPress={() => {
           try {
             login();
+            const userInfo: KakaoUser = await me();
+            setKakaoUserInfo(userInfo);
+            console.log(kakaoUserInfo);
           } catch (e) {
             console.log(e);
           }
