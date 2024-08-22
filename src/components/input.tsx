@@ -2,6 +2,8 @@ import {css} from '@emotion/native';
 import React from 'react';
 import {Text, TextInput, View} from 'react-native';
 import colors from '../style/color';
+import {useRecoilState} from 'recoil';
+import {registerData} from '../utils/atom';
 
 export default function Input({
   label,
@@ -10,11 +12,9 @@ export default function Input({
   label: string;
   placeholder: string;
 }) {
+  const [userInput, setUserInput] = useRecoilState(registerData);
   return (
-    <View
-      style={css`
-        padding: 0 20px;
-      `}>
+    <View>
       <Text
         style={css`
           color: ${colors.font.white};
@@ -34,6 +34,9 @@ export default function Input({
         `}
         placeholder={placeholder}
         placeholderTextColor={colors.font.grey}
+        onChangeText={(event: string) => {
+          setUserInput({...userInput, name: event});
+        }}
       />
     </View>
   );

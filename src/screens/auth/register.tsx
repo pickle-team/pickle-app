@@ -4,10 +4,16 @@ import Header from '../../components/header';
 import Input from '../../components/input';
 import {css} from '@emotion/native';
 import SelectColor from '../../components/selectColor';
+import Button from '../../components/button';
 
 export default function Register() {
   return (
-    <View>
+    <View
+      style={css`
+        margin-left: 20px;
+        margin-right: 20px;
+        height: 100%;
+      `}>
       <Header title="Register" />
       <View
         style={css`
@@ -27,6 +33,12 @@ export default function Register() {
         `}
       />
       <SelectColor />
+      <Button
+        handler={() => {
+          console.log(1);
+        }}
+        text="Apply"
+      />
     </View>
   );
 }

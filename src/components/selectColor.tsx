@@ -1,25 +1,17 @@
 import {css} from '@emotion/native';
-import React, {useState} from 'react';
+import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import colors from '../style/color';
 import Profile from './profile';
-
-function getRandomHexCode() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
+import {getRandomHexCode} from '../utils/getRandomHexCode';
+import {useRecoilState} from 'recoil';
+import {registerData} from '../utils/atom';
 
 export default function SelectColor() {
-  const [color, setColor] = useState<string>('#FFFFFF');
+  const [userInput, setUserInput] = useRecoilState(registerData);
+
   return (
-    <View
-      style={css`
-        padding: 0 20px;
-      `}>
+    <View>
       <Text
         style={css`
           color: ${colors.font.white};
@@ -35,7 +27,7 @@ export default function SelectColor() {
           flex-direction: row;
           align-items: center;
         `}>
-        <Profile color={color} />
+        <Profile color={userInput.color} />
         <Text
           style={css`
             color: ${colors.font.grey};
@@ -43,7 +35,7 @@ export default function SelectColor() {
             font-size: 16px;
             margin-left: 12px;
           `}>
-          {color}
+          {userInput.color}
         </Text>
         <TouchableOpacity
           style={css`
@@ -57,7 +49,7 @@ export default function SelectColor() {
             right: 0;
           `}
           onPress={() => {
-            setColor(getRandomHexCode());
+            setUserInput({...userInput, color: getRandomHexCode()});
           }}>
           <Text
             style={css`

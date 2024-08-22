@@ -7,24 +7,27 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {initializeKakaoSDK} from '@react-native-kakao/core';
 import {KAKAO_NATIVE_APP_KEY} from '@env';
 import Register from './src/screens/auth/register';
+import {RecoilRoot} from 'recoil';
 
 function App(): React.JSX.Element {
   initializeKakaoSDK(KAKAO_NATIVE_APP_KEY);
   // getKeyHashAndroid().then(console.log);
   return (
-    <SafeAreaProvider>
-      <SafeAreaView
-        style={css`
-          width: 100%;
-          height: 100%;
-          background-color: ${colors.background.black};
-          padding-top: ${Platform.OS === 'ios' ? '' : '20px'};
-        `}>
-        <StatusBar barStyle="default" />
-        {/* <Login /> */}
-        <Register />
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <RecoilRoot>
+      <SafeAreaProvider>
+        <SafeAreaView
+          style={css`
+            width: 100%;
+            height: 100%;
+            background-color: ${colors.background.black};
+            padding-top: ${Platform.OS === 'ios' ? '' : '20px'};
+          `}>
+          <StatusBar barStyle="default" />
+          {/* <Login /> */}
+          <Register />
+        </SafeAreaView>
+      </SafeAreaProvider>
+    </RecoilRoot>
   );
 }
 
