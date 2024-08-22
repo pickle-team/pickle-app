@@ -1,7 +1,7 @@
 import React from 'react';
 import {css} from '@emotion/native';
 import {Text, TouchableOpacity} from 'react-native';
-import colors from '../style/color';
+import colors from '../styles/color';
 
 export default function Button({
   text,
@@ -13,14 +13,15 @@ export default function Button({
   return (
     <TouchableOpacity
       style={css`
-        width: 100%;
-        padding: 16px 0;
+        padding: 16px;
         background-color: ${colors.background.white};
-        border-radius: 20px;
+        border-radius: 16px;
         position: absolute;
         bottom: 20px;
+        left: 20px;
+        right: 20px;
       `}
-      onPress={() => handler}>
+      onPress={() => handler()}>
       <Text
         style={css`
           color: ${colors.font.black};

@@ -5,13 +5,16 @@ import Input from '../../components/input';
 import {css} from '@emotion/native';
 import SelectColor from '../../components/selectColor';
 import Button from '../../components/button';
+import Alert from '../../components/alert';
+import {useRecoilState, useRecoilValue} from 'recoil';
+import {registerAlert, registerData} from '../../utils/atom';
 
 export default function Register() {
+  const userInput = useRecoilValue(registerData);
+  const [showAlert, setShowAlert] = useRecoilState(registerAlert);
   return (
     <View
       style={css`
-        margin-left: 20px;
-        margin-right: 20px;
         height: 100%;
       `}>
       <Header title="Register" />
@@ -35,10 +38,18 @@ export default function Register() {
       <SelectColor />
       <Button
         handler={() => {
-          console.log(1);
+          setShowAlert(true);
         }}
-        text="Apply"
+        text="Confirm"
       />
+      {showAlert ? (
+        <Alert
+          title="Do you want to confirm it?"
+          content={`Name: ${userInput.name}\nSchool: ${userInput.school}\nColor: ${userInput.color}`}
+        />
+      ) : (
+        ''
+      )}
     </View>
   );
 }

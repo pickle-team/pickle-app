@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {css} from '@emotion/native';
 import {Image, Platform, Text, TouchableOpacity, View} from 'react-native';
 import KakaoLogo from './../../../assets/svg/kakao.svg';
-import colors from '../../style/color';
+import colors from '../../styles/color';
 import {KakaoUser, login, me} from '@react-native-kakao/user';
 
 export default function Login() {
@@ -46,7 +46,7 @@ export default function Login() {
           flex-direction: row;
           align-items: center;
           justify-content: center;
-          border-radius: 8px;
+          border-radius: 16px;
         `}>
         <KakaoLogo />
         <Text

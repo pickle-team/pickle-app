@@ -1,7 +1,7 @@
 import {css} from '@emotion/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
-import colors from '../style/color';
+import colors from '../styles/color';
 import Profile from './profile';
 import {getRandomHexCode} from '../utils/getRandomHexCode';
 import {useRecoilState} from 'recoil';
@@ -11,7 +11,10 @@ export default function SelectColor() {
   const [userInput, setUserInput] = useRecoilState(registerData);
 
   return (
-    <View>
+    <View
+      style={css`
+        margin: 0 20px;
+      `}>
       <Text
         style={css`
           color: ${colors.font.white};

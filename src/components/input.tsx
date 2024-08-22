@@ -1,7 +1,7 @@
 import {css} from '@emotion/native';
 import React from 'react';
 import {Text, TextInput, View} from 'react-native';
-import colors from '../style/color';
+import colors from '../styles/color';
 import {useRecoilState} from 'recoil';
 import {registerData} from '../utils/atom';
 
@@ -14,7 +14,10 @@ export default function Input({
 }) {
   const [userInput, setUserInput] = useRecoilState(registerData);
   return (
-    <View>
+    <View
+      style={css`
+        margin: 0 20px;
+      `}>
       <Text
         style={css`
           color: ${colors.font.white};
@@ -35,7 +38,11 @@ export default function Input({
         placeholder={placeholder}
         placeholderTextColor={colors.font.grey}
         onChangeText={(event: string) => {
-          setUserInput({...userInput, name: event});
+          if (label === 'Name') {
+            setUserInput({...userInput, name: event});
+          } else if (label === 'School') {
+            setUserInput({...userInput, school: event});
+          }
         }}
       />
     </View>

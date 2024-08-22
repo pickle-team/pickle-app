@@ -1,13 +1,13 @@
 import React from 'react';
 import {css} from '@emotion/native';
 import {Text, View} from 'react-native';
-import colors from '../style/color';
+import colors from '../styles/color';
 
 export default function Header({title}: {title: string}) {
   return (
     <View
       style={css`
-        padding: 8px 0;
+        padding: 8px 20px;
       `}>
       <Text
         style={css`
