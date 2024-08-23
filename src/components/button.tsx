@@ -13,13 +13,12 @@ export default function Button({
   return (
     <TouchableOpacity
       style={css`
+        width: 100%;
         padding: 16px;
         background-color: ${colors.background.white};
         border-radius: 16px;
         position: absolute;
         bottom: 20px;
-        left: 20px;
-        right: 20px;
       `}
       onPress={() => handler()}>
       <Text

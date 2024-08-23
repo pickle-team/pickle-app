@@ -7,7 +7,7 @@ export default function Header({title}: {title: string}) {
   return (
     <View
       style={css`
-        padding: 8px 20px;
+        padding: 8px 0;
       `}>
       <Text
         style={css`

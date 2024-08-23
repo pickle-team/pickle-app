@@ -11,19 +11,7 @@ export default function SelectColor() {
   const [userInput, setUserInput] = useRecoilState(registerData);
 
   return (
-    <View
-      style={css`
-        margin: 0 20px;
-      `}>
-      <Text
-        style={css`
-          color: ${colors.font.white};
-          font-family: 'WantedSans-Medium';
-          font-size: 20px;
-          margin-bottom: 12px;
-        `}>
-        Color
-      </Text>
+    <View>
       <View
         style={css`
           display: flex;

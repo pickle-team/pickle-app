@@ -1,6 +1,6 @@
 import React from 'react';
 import {css} from '@emotion/native';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Dimensions, Text, TouchableOpacity, View} from 'react-native';
 import colors from '../styles/color';
 import {useSetRecoilState} from 'recoil';
 import {registerAlert} from '../utils/atom';
@@ -13,15 +13,17 @@ export default function Alert({
   content: string;
 }) {
   const setShowAlert = useSetRecoilState(registerAlert);
+  console.log(Dimensions.get('window').width);
   return (
     <View
       style={css`
-        width: 100%;
+        width: ${Dimensions.get('window').width + 'px'};
         height: 100%;
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
+        left: -20px;
       `}>
       <View
         style={css`

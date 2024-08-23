@@ -1,32 +1,17 @@
 import {css} from '@emotion/native';
 import React from 'react';
-import {Text, TextInput, View} from 'react-native';
+import {TextInput, View} from 'react-native';
 import colors from '../styles/color';
-import {useRecoilState} from 'recoil';
-import {registerData} from '../utils/atom';
 
 export default function Input({
-  label,
   placeholder,
+  onChangeText,
 }: {
-  label: string;
   placeholder: string;
+  onChangeText: Function;
 }) {
-  const [userInput, setUserInput] = useRecoilState(registerData);
   return (
-    <View
-      style={css`
-        margin: 0 20px;
-      `}>
-      <Text
-        style={css`
-          color: ${colors.font.white};
-          font-family: 'WantedSans-Medium';
-          font-size: 20px;
-          margin-bottom: 12px;
-        `}>
-        {label}
-      </Text>
+    <View>
       <TextInput
         style={css`
           background-color: ${colors.background.grey};
@@ -37,13 +22,7 @@ export default function Input({
         `}
         placeholder={placeholder}
         placeholderTextColor={colors.font.grey}
-        onChangeText={(event: string) => {
-          if (label === 'Name') {
-            setUserInput({...userInput, name: event});
-          } else if (label === 'School') {
-            setUserInput({...userInput, school: event});
-          }
-        }}
+        onChangeText={() => onChangeText()}
       />
     </View>
   );
