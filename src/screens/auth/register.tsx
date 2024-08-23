@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {Keyboard, TouchableWithoutFeedback, View} from 'react-native';
 import Header from '../../components/header';
 import Input from '../../components/input';
 import {css} from '@emotion/native';
@@ -13,43 +13,45 @@ export default function Register() {
   const userInput = useRecoilValue(registerData);
   const [showAlert, setShowAlert] = useRecoilState(registerAlert);
   return (
-    <View
-      style={css`
-        height: 100%;
-      `}>
-      <Header title="Register" />
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View
         style={css`
-          height: 24px;
-        `}
-      />
-      <Input label="Name" placeholder="Please enter your actual name." />
-      <View
-        style={css`
-          height: 20px;
-        `}
-      />
-      <Input label="School" placeholder="Please enter your current school." />
-      <View
-        style={css`
-          height: 20px;
-        `}
-      />
-      <SelectColor />
-      <Button
-        handler={() => {
-          setShowAlert(true);
-        }}
-        text="Confirm"
-      />
-      {showAlert ? (
-        <Alert
-          title="Do you want to confirm it?"
-          content={`Name: ${userInput.name}\nSchool: ${userInput.school}\nColor: ${userInput.color}`}
+          height: 100%;
+        `}>
+        <Header title="Register" />
+        <View
+          style={css`
+            height: 24px;
+          `}
         />
-      ) : (
-        ''
-      )}
-    </View>
+        <Input label="Name" placeholder="Please enter your actual name." />
+        <View
+          style={css`
+            height: 20px;
+          `}
+        />
+        <Input label="School" placeholder="Please enter your current school." />
+        <View
+          style={css`
+            height: 20px;
+          `}
+        />
+        <SelectColor />
+        <Button
+          handler={() => {
+            setShowAlert(true);
+          }}
+          text="Confirm"
+        />
+        {showAlert ? (
+          <Alert
+            title="Do you want to confirm it?"
+            content={`Name: ${userInput.name}\nSchool: ${userInput.school}\nColor: ${userInput.color}`}
+          />
+        ) : (
+          ''
+        )}
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
