@@ -43,7 +43,7 @@ export default function SelectColor() {
         <TouchableOpacity
           style={css`
             background-color: ${colors.background.grey};
-            padding: 8px 14px;
+            padding: 10px 16px;
             display: flex;
             justify-content: center;
             align-items: center;

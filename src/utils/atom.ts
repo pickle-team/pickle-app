@@ -3,7 +3,7 @@ import {getRandomHexCode} from './getRandomHexCode';
 
 export const registerData = atom({
   key: 'registerData',
-  default: {name: '', school: '', color: getRandomHexCode()},
+  default: {name: '', school: '', sex: 'male', color: getRandomHexCode()},
 });
 
 export const registerAlert = atom({

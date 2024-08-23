@@ -8,6 +8,7 @@ import Button from '../../components/button';
 import Alert from '../../components/alert';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import {registerAlert, registerData} from '../../utils/atom';
+import Selector from '../../components/selector';
 
 export default function Register() {
   const userInput = useRecoilValue(registerData);
@@ -36,6 +37,12 @@ export default function Register() {
             height: 20px;
           `}
         />
+        <Selector title="Sex" select1="male" select2="female" />
+        <View
+          style={css`
+            height: 20px;
+          `}
+        />
         <SelectColor />
         <Button
           handler={() => {
@@ -46,7 +53,7 @@ export default function Register() {
         {showAlert ? (
           <Alert
             title="Do you want to confirm it?"
-            content={`Name: ${userInput.name}\nSchool: ${userInput.school}\nColor: ${userInput.color}`}
+            content={`Name: ${userInput.name}\nSchool: ${userInput.school}\nSex: ${userInput.sex}\nColor: ${userInput.color}`}
           />
         ) : (
           ''
