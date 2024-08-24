@@ -5,7 +5,14 @@ import Input from '../../components/input';
 import {css} from '@emotion/native';
 import SelectColor from '../../components/selectColor';
 import Button from '../../components/button';
-import Alert from '../../components/alert';
+import Alert, {
+  cancelDoubleTextStyle,
+  cancelDoubleTouchableOpacityStyle,
+  confirmDoubleTextStyle,
+  confirmDoubleTouchableOpacityStyle,
+  confirmSingleTextStyle,
+  confirmSingleTouchableOpacityStyle,
+} from '../../components/alert';
 import {useRecoilState} from 'recoil';
 import {registerAlert, registerData} from '../../utils/atom';
 import Selector from '../../components/selector';
@@ -70,6 +77,24 @@ export default function Register() {
           <Alert
             title="Do you want to confirm it?"
             content={`Name: ${userInput.name}\nSchool: ${userInput.school}\nSex: ${userInput.sex}\nColor: ${userInput.color}`}
+            buttons={[
+              {
+                text: 'Confirm',
+                touchableOpacityStyle: confirmDoubleTouchableOpacityStyle,
+                textStyle: confirmDoubleTextStyle,
+                onPress: () => {
+                  console.log(1);
+                },
+              },
+              {
+                text: 'Cancel',
+                touchableOpacityStyle: cancelDoubleTouchableOpacityStyle,
+                textStyle: cancelDoubleTextStyle,
+                onPress: () => {
+                  setShowAlert(false);
+                },
+              },
+            ]}
           />
         ) : (
           ''
@@ -78,3 +103,18 @@ export default function Register() {
     </TouchableWithoutFeedback>
   );
 }
+
+// <Alert
+//             title="Please enter all values."
+//             content="Unpopulated value exists."
+//             buttons={[
+//               {
+//                 text: 'Confirm',
+//                 touchableOpacityStyle: confirmSingleTouchableOpacityStyle,
+//                 textStyle: confirmSingleTextStyle,
+//                 onPress: () => {
+//                   setShowAlert(false);
+//                 },
+//               },
+//             ]}
+//           />

@@ -1,19 +1,24 @@
 import React from 'react';
-import {css} from '@emotion/native';
+import {css, ReactNativeStyle} from '@emotion/native';
 import {Dimensions, Text, TouchableOpacity, View} from 'react-native';
 import colors from '../styles/color';
-import {useSetRecoilState} from 'recoil';
-import {registerAlert} from '../utils/atom';
+
+interface Button {
+  text: string;
+  touchableOpacityStyle: ReactNativeStyle;
+  textStyle: ReactNativeStyle;
+  onPress: Function;
+}
 
 export default function Alert({
   title,
   content,
+  buttons,
 }: {
   title: string;
   content: string;
+  buttons: Button[];
 }) {
-  const setShowAlert = useSetRecoilState(registerAlert);
-  console.log(Dimensions.get('window').width);
   return (
     <View
       style={css`
@@ -68,43 +73,58 @@ export default function Alert({
             justify-content: space-between;
             margin-top: 20px;
           `}>
-          <TouchableOpacity
-            style={css`
-              background-color: ${colors.background.white};
-              width: 48%;
-              padding: 12px 0;
-              border-radius: 16px;
-            `}>
-            <Text
-              style={css`
-                font-size: 14px;
-                font-family: 'WantedSans-Medium';
-                color: ${colors.font.black};
-                text-align: center;
-              `}>
-              Confirm
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={css`
-              background-color: ${colors.background.red};
-              width: 48%;
-              padding: 12px 0;
-              border-radius: 16px;
-            `}
-            onPress={() => setShowAlert(false)}>
-            <Text
-              style={css`
-                font-size: 14px;
-                font-family: 'WantedSans-Medium';
-                color: ${colors.font.white};
-                text-align: center;
-              `}>
-              Cancel
-            </Text>
-          </TouchableOpacity>
+          {buttons.map((button, index) => (
+            <TouchableOpacity
+              onPress={() => button.onPress()}
+              key={index}
+              style={button.touchableOpacityStyle}>
+              <Text style={button.textStyle}>{button.text}</Text>
+            </TouchableOpacity>
+          ))}
         </View>
       </View>
     </View>
   );
 }
+
+export const confirmSingleTouchableOpacityStyle = css`
+  background-color: ${colors.background.white};
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 16px;
+`;
+
+export const confirmSingleTextStyle = css`
+  font-size: 14px;
+  font-family: 'WantedSans-Medium';
+  color: ${colors.font.black};
+  text-align: center;
+`;
+
+export const confirmDoubleTouchableOpacityStyle = css`
+  background-color: ${colors.background.white};
+  width: 48%;
+  padding: 12px 0;
+  border-radius: 16px;
+`;
+
+export const confirmDoubleTextStyle = css`
+  font-size: 14px;
+  font-family: 'WantedSans-Medium';
+  color: ${colors.font.black};
+  text-align: center;
+`;
+
+export const cancelDoubleTouchableOpacityStyle = css`
+  background-color: ${colors.background.red};
+  width: 48%;
+  padding: 12px 0;
+  border-radius: 16px;
+`;
+
+export const cancelDoubleTextStyle = css`
+  font-size: 14px;
+  font-family: 'WantedSans-Medium';
+  color: ${colors.font.white};
+  text-align: center;
+`;
