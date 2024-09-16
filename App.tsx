@@ -23,10 +23,10 @@ function App(): React.JSX.Element {
             background-color: ${colors.background.black};
             padding-top: ${Platform.OS === 'ios' ? '' : '20px'};
           `}>
-          {/* <StatusBar barStyle="default" /> */}
+          <StatusBar barStyle="default" />
           {/* <Login /> */}
-          <Register />
-          {/* <Setting /> */}
+          {/* <Register /> */}
+          <Setting />
         </SafeAreaView>
       </SafeAreaProvider>
     </RecoilRoot>
