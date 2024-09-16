@@ -2,12 +2,26 @@ import React from 'react';
 import {css} from '@emotion/native';
 import {Image, StyleSheet, View} from 'react-native';
 
-export default function Profile({color}: {color: string}) {
+export default function Profile({
+  width,
+  height,
+  size,
+  color,
+}: {
+  width: number;
+  height: number;
+  size: number;
+  color: string;
+}) {
+  const styles = StyleSheet.create({
+    imageStyle: {width: size, resizeMode: 'contain'},
+  });
+
   return (
     <View
       style={css`
-        width: 52px;
-        height: 52px;
+        width: ${width + 'px'};
+        height: ${height + 'px'};
         background-color: ${color};
         border-radius: 100px;
         display: flex;
@@ -21,7 +35,3 @@ export default function Profile({color}: {color: string}) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  imageStyle: {width: 18, resizeMode: 'contain'},
-});

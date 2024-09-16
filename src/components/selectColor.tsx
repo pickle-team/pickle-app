@@ -18,7 +18,7 @@ export default function SelectColor() {
           flex-direction: row;
           align-items: center;
         `}>
-        <Profile color={userInput.color} />
+        <Profile width={52} height={52} size={18} color={userInput.color} />
         <Text
           style={css`
             color: ${colors.font.grey};
