@@ -9,6 +9,7 @@ import {KAKAO_NATIVE_APP_KEY} from '@env';
 import Register from './src/screens/auth/register';
 import {RecoilRoot} from 'recoil';
 import Setting from './src/screens/settings/setting';
+import Home from './src/screens/home/home';
 
 function App(): React.JSX.Element {
   initializeKakaoSDK(KAKAO_NATIVE_APP_KEY);
@@ -26,7 +27,8 @@ function App(): React.JSX.Element {
           <StatusBar barStyle="default" />
           {/* <Login /> */}
           {/* <Register /> */}
-          <Setting />
+          {/* <Setting /> */}
+          <Home />
         </SafeAreaView>
       </SafeAreaProvider>
     </RecoilRoot>

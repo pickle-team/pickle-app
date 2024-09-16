@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dimensions, Platform, Text, View} from 'react-native';
+import {Platform, Text, View} from 'react-native';
 import {css} from '@emotion/native';
 import colors from '../../styles/color';
 import Profile from '../../components/profile';
@@ -9,7 +9,7 @@ import Button from '../../components/button';
 
 export default function Setting() {
   const insets = useSafeAreaInsets();
-  const windowHeight = Dimensions.get('window').height;
+
   return (
     <View>
       <View
