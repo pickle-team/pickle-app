@@ -10,13 +10,12 @@ import Alert, {
   cancelDoubleTouchableOpacityStyle,
   confirmDoubleTextStyle,
   confirmDoubleTouchableOpacityStyle,
-  confirmSingleTextStyle,
-  confirmSingleTouchableOpacityStyle,
 } from '../../components/alert';
 import {useRecoilState} from 'recoil';
 import {registerAlert, registerData} from '../../utils/atom';
 import Selector from '../../components/selector';
 import Title from '../../components/title';
+import colors from '../../styles/color';
 
 export default function Register() {
   const [showAlert, setShowAlert] = useRecoilState(registerAlert);
@@ -67,12 +66,21 @@ export default function Register() {
         />
         <Title title="Color" />
         <SelectColor />
-        <Button
-          handler={() => {
-            setShowAlert(true);
-          }}
-          text="Confirm"
-        />
+        <View
+          style={css`
+            width: 100%;
+            position: absolute;
+            bottom: 20px;
+          `}>
+          <Button
+            backgroundColor={colors.background.white}
+            color={colors.font.black}
+            handler={() => {
+              setShowAlert(true);
+            }}
+            text="Confirm"
+          />
+        </View>
         {showAlert ? (
           <Alert
             title="Do you want to confirm it?"
