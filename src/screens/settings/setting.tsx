@@ -6,12 +6,13 @@ import Profile from '../../components/profile';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Menu from '../../components/menu';
 import Button from '../../components/button';
+import ScreenWrap from '../../components/screenWrap';
 
 export default function Setting() {
   const insets = useSafeAreaInsets();
 
   return (
-    <View>
+    <ScreenWrap topColor={colors.background.grey}>
       <View
         style={css`
           background-color: ${colors.background.grey};
@@ -90,6 +91,6 @@ export default function Setting() {
           handler={() => {}}
         />
       </View>
-    </View>
+    </ScreenWrap>
   );
 }
