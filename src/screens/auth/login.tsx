@@ -15,8 +15,9 @@ export default function Login() {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top: -20px;
-        padding: 0 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: ${colors.background.black};
       `}>
       {/* <Text
         style={css`
@@ -39,7 +40,7 @@ export default function Login() {
         style={css`
           background-color: ${colors.background.yellow};
           position: absolute;
-          bottom: ${Platform.OS === 'ios' ? '0' : '20px'};
+          bottom: ${Platform.OS === 'ios' ? '40px' : '20px'};
           width: 100%;
           padding: 16px 0%;
           display: flex;
