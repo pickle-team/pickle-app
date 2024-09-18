@@ -10,3 +10,8 @@ export const registerAlert = atom({
   key: 'registerAlert',
   default: false,
 });
+
+export const homeMenuSetHome = atom({
+  key: 'homeMenuSetHome',
+  default: true,
+});

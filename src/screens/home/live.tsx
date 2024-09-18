@@ -1,11 +1,12 @@
 import React from 'react';
 import {css} from '@emotion/native';
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
 import colors from '../../styles/color';
+import ScreenWrap from '../../components/screenWrap';
 
 export default function Live() {
   return (
-    <View>
+    <ScreenWrap topColor={colors.background.black} padding={true}>
       <Text
         style={css`
           color: ${colors.font.white};
@@ -15,6 +16,6 @@ export default function Live() {
         `}>
         Live
       </Text>
-    </View>
+    </ScreenWrap>
   );
 }

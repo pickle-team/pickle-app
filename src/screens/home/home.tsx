@@ -1,6 +1,5 @@
-import {css} from '@emotion/native';
 import React from 'react';
-import {Image, Platform, ScrollView, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import Post from '../../components/post';
 import colors from '../../styles/color';
 import ScreenWrap from '../../components/screenWrap';

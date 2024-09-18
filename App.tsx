@@ -1,21 +1,23 @@
 import React from 'react';
-import {StatusBar, View} from 'react-native';
+import {StatusBar} from 'react-native';
 import colors from './src/styles/color';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {initializeKakaoSDK} from '@react-native-kakao/core';
 import {KAKAO_NATIVE_APP_KEY} from '@env';
-import {RecoilRoot} from 'recoil';
+import {RecoilRoot, useRecoilState} from 'recoil';
 import Setting from './src/screens/settings/setting';
 import Home from './src/screens/home/home';
 import Live from './src/screens/home/live';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {css} from '@emotion/native';
-import Profile from './src/components/profile';
+import './gesture-handler';
+import {homeMenuSetHome} from './src/utils/atom';
 
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
+  const [homeMenuButtonSetHome, setHomeMenuButtonSetHome] =
+    useRecoilState(homeMenuSetHome);
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -29,11 +31,17 @@ function MyTabs() {
       }}>
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={homeMenuButtonSetHome ? Home : Live}
         options={{
           tabBarLabel: 'Home',
         }}
+        listeners={{
+          tabPress: () => {
+            setHomeMenuButtonSetHome(homeMenuButtonSetHome ? false : true);
+          },
+        }}
       />
+
       <Tab.Screen
         name="Chat"
         component={Live}
