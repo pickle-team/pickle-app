@@ -1,5 +1,5 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+import {Platform, StatusBar} from 'react-native';
 import colors from './src/styles/color';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {initializeKakaoSDK} from '@react-native-kakao/core';
@@ -36,7 +36,8 @@ function MyTabs() {
         headerShown: false,
         tabBarStyle: {
           backgroundColor: colors.background.black,
-          height: 84,
+          // height: Platform.OS === 'ios' ? 82 : 60,
+          // minHeight: 60,
           borderTopColor: colors.background.grey,
           borderTopWidth: 1,
         },
@@ -48,7 +49,7 @@ function MyTabs() {
         tabBarLabelStyle: {
           fontSize: 12,
           fontFamily: 'WantedSans-Medium',
-          marginTop: 2,
+          marginTop: 6,
         },
         tabBarItemStyle: {
           alignItems: 'center',

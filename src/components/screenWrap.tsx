@@ -2,6 +2,7 @@ import React from 'react';
 import {css} from '@emotion/native';
 import {Platform, ScrollView, View} from 'react-native';
 import colors from '../styles/color';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 export default function ScreenWrap({
   children,
@@ -12,6 +13,7 @@ export default function ScreenWrap({
   topColor: string;
   padding: boolean;
 }) {
+  const insets = useSafeAreaInsets();
   return (
     <View
       style={css`
@@ -21,7 +23,7 @@ export default function ScreenWrap({
       `}>
       <View
         style={css`
-          height: ${Platform.OS === 'ios' ? '54px' : ''};
+          height: ${`${insets.top}px`};
           background-color: ${topColor};
         `}
       />
@@ -34,6 +36,11 @@ export default function ScreenWrap({
           padding-right: ${padding ? '20px' : ''};
         `}>
         {children}
+        <View
+          style={css`
+            height: 40px;
+          `}
+        />
       </ScrollView>
     </View>
   );

@@ -12,7 +12,7 @@ export default function Setting() {
   const insets = useSafeAreaInsets();
 
   return (
-    <ScreenWrap topColor={colors.background.grey}>
+    <ScreenWrap topColor={colors.background.grey} padding={false}>
       <View
         style={css`
           background-color: ${colors.background.grey};
