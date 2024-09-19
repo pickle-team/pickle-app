@@ -17,7 +17,7 @@ export default function FloatingButton({
   const insets = useSafeAreaInsets();
   return (
     <TouchableOpacity
-      onPress={() => onPress}
+      onPress={() => onPress()}
       style={css`
         background-color: ${colors.background.white};
         display: flex;

@@ -1,15 +1,17 @@
 import React from 'react';
 import {css} from '@emotion/native';
 import {View} from 'react-native';
-import colors from '../../styles/color';
-import ScreenWrap from '../../components/screenWrap';
 import Header from '../../components/header';
 import LiveBox from '../../components/liveBox';
 import LiveWrap from '../../components/liveWrap';
+import FloatingButtonWrap from '../../components/floatingButtonWrap';
 
 export default function Live() {
   return (
-    <ScreenWrap topColor={colors.background.black} padding={false}>
+    <FloatingButtonWrap
+      buttonContent="New Live"
+      buttonOnPress={() => {}}
+      padding={false}>
       <View
         style={css`
           margin-left: 20px;
@@ -40,6 +42,6 @@ export default function Live() {
           name="Delicious Pickle"
         />
       </LiveWrap>
-    </ScreenWrap>
+    </FloatingButtonWrap>
   );
 }
