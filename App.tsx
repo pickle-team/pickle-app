@@ -1,5 +1,5 @@
 import React from 'react';
-import {StatusBar, Vibration} from 'react-native';
+import {StatusBar} from 'react-native';
 import colors from './src/styles/color';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {initializeKakaoSDK} from '@react-native-kakao/core';
@@ -18,6 +18,12 @@ import SelectedHomeIcon from './assets/svg/selectedHome.svg';
 import ChatIcon from './assets/svg/chat.svg';
 import SelectedChatIcon from './assets/svg/selectedChat.svg';
 import './gesture-handler';
+import {trigger} from 'react-native-haptic-feedback';
+
+const options = {
+  enableVibrateFallback: true,
+  ignoreAndroidSystemSettings: false,
+};
 
 const Tab = createBottomTabNavigator();
 
@@ -68,7 +74,7 @@ function MyTabs() {
         }}
         listeners={({route}) => ({
           tabPress: () => {
-            Vibration.vibrate(0);
+            trigger('impactLight', options);
             if (route.name === 'Home') {
               setHomeMenuButtonSetHome(false);
             } else if (route.name === 'Live') {
@@ -92,7 +98,7 @@ function MyTabs() {
         }}
         listeners={() => ({
           tabPress: () => {
-            Vibration.vibrate(0);
+            trigger('impactLight', options);
             setHomeMenuButtonSetHome(false);
           },
         })}
@@ -106,7 +112,7 @@ function MyTabs() {
         }}
         listeners={() => ({
           tabPress: () => {
-            Vibration.vibrate(0);
+            trigger('impactLight', options);
             setHomeMenuButtonSetHome(false);
           },
         })}
