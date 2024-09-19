@@ -7,10 +7,17 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const windowHeight = Dimensions.get('window').height;
 
-export default function FloatingButton() {
+export default function FloatingButton({
+  content,
+  onPress,
+}: {
+  content: string;
+  onPress: Function;
+}) {
   const insets = useSafeAreaInsets();
   return (
     <TouchableOpacity
+      onPress={() => onPress}
       style={css`
         background-color: ${colors.background.white};
         display: flex;
@@ -34,7 +41,7 @@ export default function FloatingButton() {
           font-size: 16px;
           margin-left: 12px;
         `}>
-        New Post
+        {content}
       </Text>
     </TouchableOpacity>
   );

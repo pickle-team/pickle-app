@@ -88,7 +88,7 @@ export default function Home() {
           `}
         />
       </ScrollView>
-      <FloatingButton />
+      <FloatingButton content="New Post" onPress={() => {}} />
     </View>
   );
 }

@@ -59,7 +59,7 @@ export default function Chat() {
           content="Really?"
         />
       </ScrollView>
-      <FloatingButton />
+      <FloatingButton content="New Chat" onPress={() => {}} />
     </View>
   );
 }
