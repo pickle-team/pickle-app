@@ -1,5 +1,5 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, Vibration} from 'react-native';
 import colors from './src/styles/color';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {initializeKakaoSDK} from '@react-native-kakao/core';
@@ -36,8 +36,6 @@ function MyTabs() {
         headerShown: false,
         tabBarStyle: {
           backgroundColor: colors.background.black,
-          // height: Platform.OS === 'ios' ? 82 : 60,
-          // minHeight: 60,
           borderTopColor: colors.background.grey,
           borderTopWidth: 1,
         },
@@ -70,6 +68,7 @@ function MyTabs() {
         }}
         listeners={({route}) => ({
           tabPress: () => {
+            Vibration.vibrate(0);
             if (route.name === 'Home') {
               setHomeMenuButtonSetHome(false);
             } else if (route.name === 'Live') {
@@ -93,6 +92,7 @@ function MyTabs() {
         }}
         listeners={() => ({
           tabPress: () => {
+            Vibration.vibrate(0);
             setHomeMenuButtonSetHome(false);
           },
         })}
@@ -106,6 +106,7 @@ function MyTabs() {
         }}
         listeners={() => ({
           tabPress: () => {
+            Vibration.vibrate(0);
             setHomeMenuButtonSetHome(false);
           },
         })}

@@ -1,11 +1,8 @@
 import React from 'react';
-import {Dimensions, Platform, Text, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import Plus from '../../assets/svg/plus.svg';
 import {css} from '@emotion/native';
 import colors from '../styles/color';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-
-const windowHeight = Dimensions.get('window').height;
 
 export default function FloatingButton({
   content,
@@ -14,7 +11,6 @@ export default function FloatingButton({
   content: string;
   onPress: Function;
 }) {
-  const insets = useSafeAreaInsets();
   return (
     <TouchableOpacity
       onPress={() => onPress()}
@@ -28,9 +24,7 @@ export default function FloatingButton({
         border-radius: 100px;
         position: absolute;
         z-index: 10;
-        top: ${Platform.OS === 'ios'
-          ? `${windowHeight - 88 - insets.top}px`
-          : `${windowHeight - 120 - insets.top}px`};
+        bottom: 20px;
         right: 20px;
       `}>
       <Plus />
