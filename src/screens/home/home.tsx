@@ -43,9 +43,6 @@ export default function Home() {
         showsVerticalScrollIndicator={false}
         style={css`
           padding-top: ${Platform.OS === 'ios' ? '' : '20px'};
-          /* height: ${Platform.OS === 'ios'
-            ? `${windowHeight - 82 - insets.top}px`
-            : `${windowHeight - 60}px`}; */
           margin: 0 20px;
         `}>
         <Image

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import colors from './src/styles/color';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {initializeKakaoSDK} from '@react-native-kakao/core';
