@@ -3,6 +3,11 @@ import {css} from '@emotion/native';
 import {Text, TouchableOpacity, View} from 'react-native';
 import colors from '../styles/color';
 import Profile from './profile';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+
+type RootStackParamList = {
+  Chat: React.ReactNode;
+};
 
 export default function ChatBox({
   profileColor,
@@ -13,6 +18,7 @@ export default function ChatBox({
   name: string;
   content: string;
 }) {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
     <TouchableOpacity
       style={css`
@@ -21,7 +27,8 @@ export default function ChatBox({
         align-items: center;
         height: 76px;
         padding: 0 20px;
-      `}>
+      `}
+      onPress={() => navigation.navigate('Chat')}>
       <Profile width={56} height={56} size={20} color={profileColor} />
       <View
         style={css`

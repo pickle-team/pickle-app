@@ -81,7 +81,7 @@ export default function BottomTab() {
       />
 
       <Tab.Screen
-        name="Chat"
+        name="ChatList"
         component={ChatList}
         options={{
           tabBarLabel: 'Chat',
