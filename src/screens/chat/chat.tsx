@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {css} from '@emotion/native';
 import {
   ScrollView,
@@ -19,6 +19,7 @@ import {useNavigation} from '@react-navigation/native';
 export default function Chat() {
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
+  const scrollViewRef = useRef<ScrollView>(null);
 
   return (
     <View
@@ -71,7 +72,19 @@ export default function Chat() {
         style={css`
           padding-left: 20px;
           padding-right: 20px;
-        `}>
+        `}
+        contentContainerStyle={css`
+          flex-grow: 1;
+          justify-content: flex-end;
+        `}
+        showsVerticalScrollIndicator={false}
+        ref={scrollViewRef}
+        onContentSizeChange={() => {
+          scrollViewRef.current?.scrollToEnd({animated: false});
+        }}
+        onLayout={() => {
+          scrollViewRef.current?.scrollToEnd({animated: false});
+        }}>
         <Text
           style={css`
             color: ${colors.font.grey};
@@ -95,7 +108,6 @@ export default function Chat() {
         <OtherMessage content="How was the pickle chat?" />
         <MyMessage content="How was the pickle chat?" />
         <OtherMessage content="How was the pickle chat?" />
-
         <View
           style={css`
             height: ${`${insets.top + 40}px`};
