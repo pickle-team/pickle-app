@@ -7,6 +7,8 @@ import {RecoilRoot} from 'recoil';
 import {NavigationContainer} from '@react-navigation/native';
 import BottomTab from './src/components/bottomTab';
 import './gesture-handler';
+import Chat from './src/screens/chat/chat';
+import LiveContent from './src/screens/home/liveContent';
 
 function App(): React.JSX.Element {
   initializeKakaoSDK(KAKAO_NATIVE_APP_KEY);
@@ -17,7 +19,9 @@ function App(): React.JSX.Element {
         <SafeAreaProvider>
           <StatusBar barStyle="default" />
           {/* <Login /> */}
-          <BottomTab />
+          {/* <BottomTab /> */}
+          <Chat />
+          {/* <LiveContent /> */}
         </SafeAreaProvider>
       </NavigationContainer>
     </RecoilRoot>

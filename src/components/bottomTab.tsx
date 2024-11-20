@@ -9,10 +9,10 @@ import {useRecoilState} from 'recoil';
 import {homeMenuSetHome} from '../utils/atom';
 import Profile from './profile';
 import colors from '../styles/color';
-import Chat from '../screens/chat/chat';
 import Setting from '../screens/settings/setting';
 import Home from '../screens/home/home';
 import Live from '../screens/home/live';
+import ChatList from '../screens/chat/list';
 
 const options = {
   enableVibrateFallback: true,
@@ -82,7 +82,7 @@ export default function BottomTab() {
 
       <Tab.Screen
         name="Chat"
-        component={Chat}
+        component={ChatList}
         options={{
           tabBarLabel: 'Chat',
           tabBarIcon: ({focused}) =>

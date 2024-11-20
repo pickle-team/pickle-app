@@ -1,47 +1,290 @@
 import React from 'react';
 import {css} from '@emotion/native';
-import {View} from 'react-native';
-import Header from '../../components/header';
-import ChatBox from '../../components/chatBox';
-import FloatingButtonWrap from '../../components/floatingButtonWrap';
+import {
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import colors from '../../styles/color';
+import Profile from '../../components/profile';
+import Arrow from '../../../assets/svg/arrow-left.svg';
+import Image from '../../../assets/svg/image.svg';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import MyMessage from '../../components/myMessage';
+import OtherMessage from '../../components/otherMessage';
 
 export default function Chat() {
+  const insets = useSafeAreaInsets();
   return (
-    <FloatingButtonWrap
-      buttonContent="New Chat"
-      buttonOnPress={() => {}}
-      padding={false}>
+    <View
+      style={css`
+        width: 100%;
+        height: 100%;
+        background-color: ${colors.background.black};
+      `}>
       <View
         style={css`
-          margin-left: 20px;
-        `}>
-        <Header title="Chat" />
-      </View>
-      <View
-        style={css`
-          height: 16px;
+          height: ${`${insets.top}px`};
         `}
       />
-      <ChatBox
-        profileColor="#E58DFB"
-        name="Delicious Pickle"
-        content="Really?"
-      />
-      <ChatBox
-        profileColor="#E58DFB"
-        name="Delicious Pickle"
-        content="Really?"
-      />
-      <ChatBox
-        profileColor="#E58DFB"
-        name="Delicious Pickle"
-        content="Really?"
-      />
-      <ChatBox
-        profileColor="#E58DFB"
-        name="Delicious Pickle"
-        content="Really?"
-      />
-    </FloatingButtonWrap>
+      <View
+        style={css`
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          border-bottom-width: 1px;
+          border-color: ${colors.background.grey};
+          padding-top: 10px;
+          padding-bottom: 10px;
+        `}>
+        <TouchableOpacity
+          style={css`
+            margin-right: 8px;
+            margin-left: 20px;
+          `}>
+          <Arrow />
+        </TouchableOpacity>
+        <Profile
+          width={32}
+          height={32}
+          size={12}
+          color={colors.background.yellow}
+        />
+        <Text
+          style={css`
+            color: ${colors.font.white};
+            font-family: 'WantedSans-Medium';
+            font-size: 18px;
+            margin-left: 8px;
+          `}>
+          Incredible Pickle
+        </Text>
+      </View>
+      <ScrollView
+        style={css`
+          padding-left: 20px;
+          padding-right: 20px;
+        `}>
+        <Text
+          style={css`
+            color: ${colors.font.grey};
+            font-family: 'WantedSans-Medium';
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 24px;
+          `}>
+          August 15th (Mon) 2024
+        </Text>
+        <MyMessage content="How was the pickle chat?" />
+        <OtherMessage content="How was the pickle chat?" />
+        <MyMessage content="How was the pickle chat?" />
+        <OtherMessage content="How was the pickle chat?" />
+        <MyMessage content="How was the pickle chat?" />
+        <OtherMessage content="How was the pickle chat?" />
+        <MyMessage content="How was the pickle chat?" />
+        <OtherMessage content="How was the pickle chat?" />
+        <MyMessage content="How was the pickle chat?" />
+        <OtherMessage content="How was the pickle chat?" />
+        <MyMessage content="How was the pickle chat?" />
+        <OtherMessage content="How was the pickle chat?" />
+
+        <View
+          style={css`
+            height: ${`${insets.top + 40}px`};
+          `}
+        />
+      </ScrollView>
+      <View
+        style={css`
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        `}>
+        <View
+          style={css`
+            background-color: ${colors.background.black};
+            position: absolute;
+            bottom: 0px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-top: 8px;
+            padding-bottom: 40px;
+          `}>
+          <TextInput
+            style={css`
+              background-color: ${colors.background.grey};
+              font-family: 'WantedSans-Medium';
+              font-size: 16px;
+              color: ${colors.font.grey};
+              padding: 14px 20px;
+              padding-right: 60px;
+              border-radius: 24px;
+              margin-right: 8px;
+              flex: 1;
+            `}
+            placeholder={'Type a message'}
+            placeholderTextColor={colors.font.grey}
+            onChangeText={() => {}}
+            multiline={true}
+          />
+          <TouchableOpacity
+            style={css`
+              width: 36px;
+              height: 36px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: ${colors.background.white};
+              border-radius: 100px;
+            `}>
+            <Image />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
   );
 }
+
+// import React from 'react';
+// import {css} from '@emotion/native';
+// import {
+//   ScrollView,
+//   Text,
+//   TextInput,
+//   TouchableOpacity,
+//   View,
+// } from 'react-native';
+// import colors from '../../styles/color';
+// import Profile from '../../components/profile';
+// import Arrow from '../../../assets/svg/arrow-left.svg';
+// import Image from '../../../assets/svg/image.svg';
+// import {useSafeAreaInsets} from 'react-native-safe-area-context';
+// import MyMessage from '../../components/myMessage';
+// import OtherMessage from '../../components/otherMessage';
+
+// export default function Chat() {
+//   const insets = useSafeAreaInsets();
+//   return (
+//     <View
+//       style={css`
+//         width: 100%;
+//         height: 100%;
+//         background-color: ${colors.background.black};
+//       `}>
+//       <View
+//         style={css`
+//           height: ${`${insets.top}px`};
+//         `}
+//       />
+//       <View
+//         style={css`
+//           width: 100%;
+//           display: flex;
+//           flex-direction: row;
+//           align-items: center;
+//           border-bottom-width: 1px;
+//           border-color: ${colors.background.grey};
+//           padding-top: 10px;
+//           padding-bottom: 10px;
+//         `}>
+//         <TouchableOpacity
+//           style={css`
+//             margin-right: 8px;
+//             margin-left: 20px;
+//           `}>
+//           <Arrow />
+//         </TouchableOpacity>
+//         <Profile
+//           width={32}
+//           height={32}
+//           size={12}
+//           color={colors.background.yellow}
+//         />
+//         <Text
+//           style={css`
+//             color: ${colors.font.white};
+//             font-family: 'WantedSans-Medium';
+//             font-size: 18px;
+//             margin-left: 8px;
+//           `}>
+//           Incredible Pickle
+//         </Text>
+//       </View>
+//       <ScrollView
+//         style={css`
+//           padding-left: 20px;
+//           padding-right: 20px;
+//         `}>
+//         <Text
+//           style={css`
+//             color: ${colors.font.grey};
+//             font-family: 'WantedSans-Medium';
+//             font-size: 14px;
+//             text-align: center;
+//             margin-top: 20px;
+//             margin-bottom: 24px;
+//           `}>
+//           August 15th (Mon) 2024
+//         </Text>
+//         <MyMessage content="How was the pickle chat?" />
+//         <OtherMessage content="How was the pickle chat?" />
+//         <MyMessage content="How was the pickle chat?" />
+//         <OtherMessage content="How was the pickle chat?" />
+//         <MyMessage content="How was the pickle chat?" />
+//         <OtherMessage content="How was the pickle chat?" />
+//         <MyMessage content="How was the pickle chat?" />
+//         <OtherMessage content="How was the pickle chat?" />
+//         <MyMessage content="How was the pickle chat?" />
+//         <OtherMessage content="How was the pickle chat?" />
+//         <MyMessage content="How was the pickle chat?" />
+//         <OtherMessage content="How was the pickle chat?" />
+
+//         <View
+//           style={css`
+//             height: ${`${insets.top + 40}px`};
+//           `}
+//         />
+//       </ScrollView>
+//       <View
+//         style={css`
+//           background-color: ${colors.background.black};
+//           position: absolute;
+//           bottom: 0px;
+//           left: 20px;
+//           right: 20px;
+//           border-radius: 24px;
+//         `}>
+//         <TextInput
+//           style={css`
+//             background-color: ${colors.background.grey};
+//             font-family: 'WantedSans-Medium';
+//             font-size: 16px;
+//             color: ${colors.font.grey};
+//             padding: 14px 20px;
+//             border-radius: 100px;
+//             margin-bottom: 40px;
+//           `}
+//           placeholder={'Type a message'}
+//           placeholderTextColor={colors.font.grey}
+//           onChangeText={() => {}}
+//         />
+//         <TouchableOpacity
+//           style={css`
+//             padding: 6px;
+//             background-color: ${colors.background.white};
+//             position: absolute;
+//             border-radius: 100px;
+//           `}>
+//           <Image />
+//         </TouchableOpacity>
+//       </View>
+//     </View>
+//   );
+// }
