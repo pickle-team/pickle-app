@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {css} from '@emotion/native';
 import {
   KeyboardAvoidingView,
@@ -11,8 +11,9 @@ import {
 } from 'react-native';
 import colors from '../../styles/color';
 import Profile from '../../components/common/Profile';
-import Arrow from '../../../assets/svg/arrow-left.svg';
-import Image from '../../../assets/svg/image.svg';
+import ArrowIcon from '../../../assets/svg/arrow-left.svg';
+import ImageIcon from '../../../assets/svg/image.svg';
+import SendIcon from '../../../assets/svg/arrow-up.svg';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import MyMessage from '../../components/chat/MyMessage';
 import OtherMessage from '../../components/chat/OtherMessage';
@@ -22,6 +23,7 @@ export default function Chat() {
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
   const scrollViewRef = useRef<ScrollView>(null);
+  const [inputValue, setInputValue] = useState('');
 
   return (
     <KeyboardAvoidingView
@@ -58,7 +60,7 @@ export default function Chat() {
               margin-left: 20px;
             `}
             onPress={() => navigation.goBack()}>
-            <Arrow />
+            <ArrowIcon />
           </TouchableOpacity>
           <Profile
             width={32}
@@ -156,7 +158,9 @@ export default function Chat() {
               `}
               placeholder={'Type a message'}
               placeholderTextColor={colors.font.grey}
-              onChangeText={() => {}}
+              onChangeText={e => {
+                setInputValue(e);
+              }}
               multiline={true}
             />
             <TouchableOpacity
@@ -169,7 +173,7 @@ export default function Chat() {
                 background-color: ${colors.background.white};
                 border-radius: 100px;
               `}>
-              <Image />
+              {inputValue === '' ? <ImageIcon /> : <SendIcon />}
             </TouchableOpacity>
           </View>
         </View>
