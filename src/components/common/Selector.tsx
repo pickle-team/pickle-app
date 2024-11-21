@@ -1,9 +1,9 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {css} from '@emotion/native';
-import colors from '../styles/color';
+import colors from '../../styles/color';
 import {useRecoilState} from 'recoil';
-import {registerData} from '../utils/atom';
+import {registerData} from '../../utils/atom';
 
 export default function Selector({
   select1,

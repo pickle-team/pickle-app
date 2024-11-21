@@ -1,7 +1,7 @@
 import React from 'react';
 import {Dimensions, Image, StyleSheet} from 'react-native';
-import Post from '../../components/post';
-import FloatingButtonWrap from '../../components/floatingButtonWrap';
+import Post from '../../components/home/Post';
+import FloatingButtonWrap from '../../components/common/FloatingButtonWrap';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;

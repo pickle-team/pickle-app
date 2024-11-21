@@ -1,12 +1,18 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {css} from '@emotion/native';
-import Arrow from '../../assets/svg/arrow-right.svg';
-import colors from '../styles/color';
+import ArrowIcon from '../../../assets/svg/arrow-right.svg';
+import colors from '../../styles/color';
 
-export default function Menu({title, items}: {title: string; items: string[]}) {
+export default function SettingMenu({
+  title,
+  items,
+}: {
+  title: string;
+  items: string[];
+}) {
   return (
-    <View style={css``}>
+    <View>
       <Text
         style={css`
           color: ${colors.font.white};
@@ -40,7 +46,7 @@ export default function Menu({title, items}: {title: string; items: string[]}) {
               `}>
               {item}
             </Text>
-            <Arrow />
+            <ArrowIcon />
           </TouchableOpacity>
         ))}
       </View>

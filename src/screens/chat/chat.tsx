@@ -10,12 +10,12 @@ import {
   View,
 } from 'react-native';
 import colors from '../../styles/color';
-import Profile from '../../components/profile';
+import Profile from '../../components/common/Profile';
 import Arrow from '../../../assets/svg/arrow-left.svg';
 import Image from '../../../assets/svg/image.svg';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import MyMessage from '../../components/myMessage';
-import OtherMessage from '../../components/otherMessage';
+import MyMessage from '../../components/chat/MyMessage';
+import OtherMessage from '../../components/chat/OtherMessage';
 import {useNavigation} from '@react-navigation/native';
 
 export default function Chat() {

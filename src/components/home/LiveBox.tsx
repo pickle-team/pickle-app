@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import colors from '../styles/color';
-import Profile from './profile';
+import colors from '../../styles/color';
+import Profile from '../common/Profile';
 
 export default function LiveBox({
   image,

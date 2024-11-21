@@ -1,8 +1,8 @@
 import React from 'react';
 import {css} from '@emotion/native';
 import {Text, TouchableOpacity, View} from 'react-native';
-import colors from '../styles/color';
-import Profile from './profile';
+import colors from '../../styles/color';
+import Profile from '../common/Profile';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 
 type RootStackParamList = {

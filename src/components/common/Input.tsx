@@ -1,7 +1,7 @@
 import {css} from '@emotion/native';
 import React from 'react';
 import {TextInput, View} from 'react-native';
-import colors from '../styles/color';
+import colors from '../../styles/color';
 
 export default function Input({
   placeholder,

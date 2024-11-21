@@ -2,11 +2,12 @@ import React from 'react';
 import {Platform, Text, View} from 'react-native';
 import {css} from '@emotion/native';
 import colors from '../../styles/color';
-import Profile from '../../components/profile';
+import Profile from '../../components/common/Profile';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import Menu from '../../components/menu';
-import Button from '../../components/button';
-import ScreenWrap from '../../components/screenWrap';
+
+import Button from '../../components/common/Button';
+import ScreenWrap from '../../components/common/ScreenWrap';
+import SettingMenu from '../../components/settings/SettingMenu';
 
 export default function Setting() {
   const insets = useSafeAreaInsets();
@@ -72,13 +73,16 @@ export default function Setting() {
           display: flex;
           flex-direction: column;
         `}>
-        <Menu title="Account" items={['Account Info', 'Payment', 'Bookmark']} />
+        <SettingMenu
+          title="Account"
+          items={['Account Info', 'Payment', 'Bookmark']}
+        />
         <View
           style={css`
             height: 40px;
           `}
         />
-        <Menu title="Service" items={['Customer Service', 'App Info']} />
+        <SettingMenu title="Service" items={['Customer Service', 'App Info']} />
         <View
           style={css`
             height: 40px;

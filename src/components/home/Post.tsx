@@ -1,7 +1,7 @@
 import {css} from '@emotion/native';
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import colors from '../styles/color';
+import colors from '../../styles/color';
 
 export default function Post({
   title,
@@ -70,7 +70,7 @@ export default function Post({
       </View>
       <Image
         style={styles.imageStyle}
-        source={require('../../assets/images/pickle_pizza.png')}
+        source={require('../../../assets/images/pickle_pizza.png')}
       />
     </TouchableOpacity>
   );

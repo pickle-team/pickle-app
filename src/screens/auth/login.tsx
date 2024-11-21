@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {css} from '@emotion/native';
 import {Image, Platform, Text, TouchableOpacity, View} from 'react-native';
+import {KakaoUser, login, me} from '@react-native-kakao/user';
 import KakaoLogo from './../../../assets/svg/kakao.svg';
 import colors from '../../styles/color';
-import {KakaoUser, login, me} from '@react-native-kakao/user';
 
 export default function Login() {
   const [kakaoUserInfo, setKakaoUserInfo] = useState<KakaoUser | null>(null);

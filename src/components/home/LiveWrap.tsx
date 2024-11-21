@@ -1,7 +1,7 @@
 import React from 'react';
 import {css} from '@emotion/native';
 import {ScrollView, Text, View} from 'react-native';
-import colors from '../styles/color';
+import colors from '../../styles/color';
 
 export default function LiveWrap({
   tag,

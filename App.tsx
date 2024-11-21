@@ -6,7 +6,7 @@ import {KAKAO_NATIVE_APP_KEY} from '@env';
 import {RecoilRoot} from 'recoil';
 import {NavigationContainer} from '@react-navigation/native';
 import './gesture-handler';
-import RootNavigation from './src/components/rootNavigation';
+import RootNavigation from './src/components/navigation/RootNavigation';
 
 function App(): React.JSX.Element {
   initializeKakaoSDK(KAKAO_NATIVE_APP_KEY);

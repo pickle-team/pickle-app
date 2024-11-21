@@ -1,18 +1,18 @@
 import React from 'react';
-import HomeIcon from '../../assets/svg/home.svg';
-import SelectedHomeIcon from '../../assets/svg/selectedHome.svg';
-import ChatIcon from '../../assets/svg/chat.svg';
-import SelectedChatIcon from '../../assets/svg/selectedChat.svg';
+import HomeIcon from '../../../assets/svg/home.svg';
+import SelectedHomeIcon from '../../../assets/svg/selectedHome.svg';
+import ChatIcon from '../../../assets/svg/chat.svg';
+import SelectedChatIcon from '../../../assets/svg/selectedChat.svg';
 import {trigger} from 'react-native-haptic-feedback';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useRecoilState} from 'recoil';
-import {homeMenuSetHome} from '../utils/atom';
-import Profile from './profile';
-import colors from '../styles/color';
-import Setting from '../screens/settings/setting';
-import Home from '../screens/home/home';
-import Live from '../screens/home/live';
-import ChatList from '../screens/chat/list';
+import {homeMenuSetHome} from '../../utils/atom';
+import Profile from '../common/Profile';
+import colors from '../../styles/color';
+import Setting from '../../screens/settings/Setting';
+import Home from '../../screens/home/Home';
+import ChatList from '../../screens/chat/List';
+import LiveList from '../../screens/home/LiveList';
 
 const options = {
   enableVibrateFallback: true,
@@ -57,8 +57,8 @@ export default function BottomTab() {
         },
       }}>
       <Tab.Screen
-        name={homeMenuButtonSetHome ? 'Home' : 'Live'}
-        component={homeMenuButtonSetHome ? Home : Live}
+        name={homeMenuButtonSetHome ? 'Home' : 'LiveList'}
+        component={homeMenuButtonSetHome ? Home : LiveList}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({focused}) =>
@@ -73,7 +73,7 @@ export default function BottomTab() {
             trigger('impactLight', options);
             if (route.name === 'Home') {
               setHomeMenuButtonSetHome(false);
-            } else if (route.name === 'Live') {
+            } else if (route.name === 'LiveList') {
               setHomeMenuButtonSetHome(true);
             }
           },

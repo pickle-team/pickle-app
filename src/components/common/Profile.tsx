@@ -30,7 +30,7 @@ export default function Profile({
       `}>
       <Image
         style={styles.imageStyle}
-        source={require('../../assets/images/pickle.png')}
+        source={require('../../../assets/images/pickle.png')}
       />
     </View>
   );

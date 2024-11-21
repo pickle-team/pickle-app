@@ -1,11 +1,11 @@
 import {css} from '@emotion/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
-import colors from '../styles/color';
-import Profile from './profile';
-import {getRandomHexCode} from '../utils/getRandomHexCode';
+import colors from '../../styles/color';
+import Profile from './Profile';
+import {getRandomHexCode} from '../../utils/getRandomHexCode';
 import {useRecoilState} from 'recoil';
-import {registerData} from '../utils/atom';
+import {registerData} from '../../utils/atom';
 
 export default function SelectColor() {
   const [userInput, setUserInput] = useRecoilState(registerData);

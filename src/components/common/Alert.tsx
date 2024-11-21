@@ -1,7 +1,7 @@
 import React from 'react';
 import {css, ReactNativeStyle} from '@emotion/native';
 import {Dimensions, Text, TouchableOpacity, View} from 'react-native';
-import colors from '../styles/color';
+import colors from '../../styles/color';
 
 interface Button {
   text: string;

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
-import Plus from '../../assets/svg/plus.svg';
+import PlusIcon from '../../../assets/svg/plus.svg';
 import {css} from '@emotion/native';
-import colors from '../styles/color';
+import colors from '../../styles/color';
 
 export default function FloatingButton({
   content,
@@ -27,7 +27,7 @@ export default function FloatingButton({
         bottom: 20px;
         right: 20px;
       `}>
-      <Plus />
+      <PlusIcon />
       <Text
         style={css`
           color: ${colors.font.black};

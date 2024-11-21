@@ -1,16 +1,20 @@
 import React from 'react';
-import {css} from '@emotion/native';
 import {Platform, ScrollView, View} from 'react-native';
-import colors from '../styles/color';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-export default function ScreenWrap({
+import {css} from '@emotion/native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import colors from '../../styles/color';
+import FloatingButton from './FloatingButton';
+
+export default function FloatingButtonWrap({
   children,
-  topColor,
+  buttonContent,
+  buttonOnPress,
   padding,
 }: {
   children: React.ReactNode;
-  topColor: string;
+  buttonContent: string;
+  buttonOnPress: Function;
   padding: boolean;
 }) {
   const insets = useSafeAreaInsets();
@@ -23,15 +27,14 @@ export default function ScreenWrap({
       `}>
       <View
         style={css`
-          height: ${`${insets.top}px`};
-          background-color: ${topColor};
+          height: ${Platform.OS === 'ios' ? `${insets.top}px` : ''};
+          background-color: ${colors.background.black};
         `}
       />
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={css`
           padding-top: ${Platform.OS === 'ios' ? '' : '20px'};
-          background-color: ${colors.background.black};
           padding-left: ${padding ? '20px' : ''};
           padding-right: ${padding ? '20px' : ''};
         `}>
@@ -42,6 +45,7 @@ export default function ScreenWrap({
           `}
         />
       </ScrollView>
+      <FloatingButton content={buttonContent} onPress={() => buttonOnPress()} />
     </View>
   );
 }

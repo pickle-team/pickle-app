@@ -1,9 +1,9 @@
 import React from 'react';
 import {css} from '@emotion/native';
 import {View} from 'react-native';
-import Header from '../../components/header';
-import ChatBox from '../../components/chatBox';
-import FloatingButtonWrap from '../../components/floatingButtonWrap';
+import Header from '../../components/common/Header';
+import ChatBox from '../../components/chat/ChatBox';
+import FloatingButtonWrap from '../../components/common/FloatingButtonWrap';
 
 export default function ChatList() {
   return (

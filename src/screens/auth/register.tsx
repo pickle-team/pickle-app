@@ -1,20 +1,20 @@
 import React from 'react';
 import {Keyboard, TouchableWithoutFeedback, View} from 'react-native';
-import Header from '../../components/header';
-import Input from '../../components/input';
+import Header from '../../components/common/Header';
+import Input from '../../components/common/Input';
 import {css} from '@emotion/native';
-import SelectColor from '../../components/selectColor';
-import Button from '../../components/button';
+import SelectColor from '../../components/common/SelectColor';
+import Button from '../../components/common/Button';
 import Alert, {
   cancelDoubleTextStyle,
   cancelDoubleTouchableOpacityStyle,
   confirmDoubleTextStyle,
   confirmDoubleTouchableOpacityStyle,
-} from '../../components/alert';
+} from '../../components/common/Alert';
 import {useRecoilState} from 'recoil';
 import {registerAlert, registerData} from '../../utils/atom';
-import Selector from '../../components/selector';
-import Title from '../../components/title';
+import Selector from '../../components/common/Selector';
+import Title from '../../components/common/Title';
 import colors from '../../styles/color';
 
 export default function Register() {
