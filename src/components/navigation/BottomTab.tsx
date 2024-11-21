@@ -11,7 +11,7 @@ import Profile from '../common/Profile';
 import colors from '../../styles/color';
 import Setting from '../../screens/settings/Setting';
 import Home from '../../screens/home/Home';
-import ChatList from '../../screens/chat/List';
+import ChatList from '../../screens/chat/ChatList';
 import LiveList from '../../screens/home/LiveList';
 
 const options = {

@@ -10,6 +10,11 @@ import {
 } from 'react-native';
 import colors from '../../styles/color';
 import Profile from '../common/Profile';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+
+type RootStackParamList = {
+  Live: React.ReactNode;
+};
 
 export default function LiveBox({
   image,
@@ -20,12 +25,16 @@ export default function LiveBox({
   profileColor: string;
   name: string;
 }) {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
     <View
       style={css`
         margin-right: 20px;
       `}>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Live');
+        }}>
         <Image style={styles.imageStyle} source={image} />
       </TouchableOpacity>
       <View

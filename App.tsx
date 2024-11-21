@@ -7,6 +7,7 @@ import {RecoilRoot} from 'recoil';
 import {NavigationContainer} from '@react-navigation/native';
 import './gesture-handler';
 import RootNavigation from './src/components/navigation/RootNavigation';
+import Live from './src/screens/home/Live';
 
 function App(): React.JSX.Element {
   initializeKakaoSDK(KAKAO_NATIVE_APP_KEY);
@@ -19,7 +20,7 @@ function App(): React.JSX.Element {
           {/* <Login /> */}
           <RootNavigation />
           {/* <Chat /> */}
-          {/* <LiveContent /> */}
+          {/* <Live /> */}
         </SafeAreaProvider>
       </NavigationContainer>
     </RecoilRoot>
